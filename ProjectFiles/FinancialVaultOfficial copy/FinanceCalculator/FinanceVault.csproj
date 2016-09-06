@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{BD71AACB-2EB9-4035-A939-FBBCAEF3F41A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FinanceCalculator</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>FinanceCalculator</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFastDev>true</MtouchFastDev>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchDebug>true</MtouchDebug>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <CodesignKey>iPhone Developer: Dan Gerchcovich (73L95H7A83)</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignProvision>25c8b52c-75e1-4f03-86c3-28b47628fe7b</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Resources\Controllers\DisclaimerController.xib" />
+    <InterfaceDefinition Include="Resources\DisclaimerController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Resources\Utility.cs" />
+    <Compile Include="CameraController.cs" />
+    <Compile Include="CameraController.designer.cs">
+      <DependentUpon>CameraController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\BudgetController.cs" />
+    <Compile Include="Resources\Controllers\BudgetController.designer.cs">
+      <DependentUpon>BudgetController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\BudgetNavigationController.cs" />
+    <Compile Include="Resources\Controllers\BudgetNavigationController.designer.cs">
+      <DependentUpon>BudgetNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\ChangeOfCurrencyController.cs" />
+    <Compile Include="Resources\Controllers\ChangeOfCurrencyController.designer.cs">
+      <DependentUpon>ChangeOfCurrencyController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\Currency.cs" />
+    <Compile Include="Resources\Controllers\Currency.designer.cs">
+      <DependentUpon>Currency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\CurrencyChoice.cs" />
+    <Compile Include="Resources\Controllers\CurrencyChoice.designer.cs">
+      <DependentUpon>CurrencyChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\CurrencyConverterController.cs" />
+    <Compile Include="Resources\Controllers\CurrencyConverterController.designer.cs">
+      <DependentUpon>CurrencyConverterController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\DisclaimerController.cs" />
+    <Compile Include="Resources\Controllers\DisclaimerController.designer.cs">
+      <DependentUpon>DisclaimerController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\ExpenseController.cs" />
+    <Compile Include="Resources\Controllers\ExpenseController.designer.cs">
+      <DependentUpon>ExpenseController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\IncomeBudgetController.cs" />
+    <Compile Include="Resources\Controllers\IncomeBudgetController.designer.cs">
+      <DependentUpon>IncomeBudgetController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\IncomeTaxController.cs" />
+    <Compile Include="Resources\Controllers\IncomeTaxController.designer.cs">
+      <DependentUpon>IncomeTaxController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\MoreApps.cs" />
+    <Compile Include="Resources\Controllers\MoreApps.designer.cs">
+      <DependentUpon>MoreApps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\MoreAppsController.cs" />
+    <Compile Include="Resources\Controllers\MoreAppsController.designer.cs">
+      <DependentUpon>MoreAppsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\MortageController.cs" />
+    <Compile Include="Resources\Controllers\MortageController.designer.cs">
+      <DependentUpon>MortageController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\NavMasterController.cs" />
+    <Compile Include="Resources\Controllers\NavMasterController.designer.cs">
+      <DependentUpon>NavMasterController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\ResultsControllerTotal.cs" />
+    <Compile Include="Resources\Controllers\ResultsControllerTotal.designer.cs">
+      <DependentUpon>ResultsControllerTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\ScientificCalcController.cs" />
+    <Compile Include="Resources\Controllers\ScientificCalcController.designer.cs">
+      <DependentUpon>ScientificCalcController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\SettingsController.cs" />
+    <Compile Include="Resources\Controllers\SettingsController.designer.cs">
+      <DependentUpon>SettingsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\tableMoreApps.cs" />
+    <Compile Include="Resources\Controllers\tableMoreApps.designer.cs">
+      <DependentUpon>tableMoreApps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\TabMaster.cs" />
+    <Compile Include="Resources\Controllers\TabMaster.designer.cs">
+      <DependentUpon>TabMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\TotalCalculationController.cs" />
+    <Compile Include="Resources\Controllers\TotalCalculationController.designer.cs">
+      <DependentUpon>TotalCalculationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\ViewController.cs" />
+    <Compile Include="Resources\Controllers\ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeCarrierData.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\TabBarBackground.png" />
+    <BundleResource Include="Resources\NavBar.jpg" />
+    <BundleResource Include="Resources\Toolbar.jpg" />
+    <BundleResource Include="Resources\Nav.jpg" />
+    <BundleResource Include="Resources\Tab.jpg" />
+    <BundleResource Include="Resources\iPadAppIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Controllers\" />
+  </ItemGroup>
+</Project>
